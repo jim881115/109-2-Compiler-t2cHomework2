@@ -12,16 +12,16 @@ Augment your T parser with semantic actions for constructing parse trees, write 
 　　這次只要修改老師給的資料夾裡的 t_parse.y 與 t2c_tree.c 就可以，不過在編寫前要先理解運算式在幹麻(t_parse.y)及建立資料型態裡的內容(t2c_tree.c)<br/>
 * t_parse.y <br/>
 ![](https://i.imgur.com/7yJbn0N.png) <br/>
-　　$$就是代表指 Left hand side 的 nonterminal A，而$k 是指 Right hand side 的 nonterminal 或 terminal X_k <br/>
-![](https://i.imgur.com/Sv92zY9.png) <br/>
-　　這部分只要依照上面的規則，與參考老師上面打的範例就能完成，也要參考 t2c_tree.c 裡的 case，來看是要 create_stm()或 create_exp() <br/>
+　　$$就是代表指 Left hand side 的 nonterminal A，而$k 是指 Right hand side 的 nonterminal 或 terminal X_k <br/> <br/>
+![](https://i.imgur.com/Sv92zY9.png) <br/> 
+　　這部分只要依照上面的規則，與參考老師上面打的範例就能完成，也要參考 t2c_tree.c 裡的 case，來看是要 create_stm()或 create_exp() <br/> <br/>
 ![](https://i.imgur.com/mBqfCsf.png) <br/>
-　　比較有問題的是在 pexpr 這裡，那時找不太到 exp_id 要去指定到哪個 case，找了一段時間試了好幾遍才 debug 完，這部分細心就好，debug 沒用很久就完成了 <br/>
+　　比較有問題的是在 pexpr 這裡，那時找不太到 exp_id 要去指定到哪個 case，找了一段時間試了好幾遍才 debug 完，這部分細心就好，debug 沒用很久就完成了 <br/> <br/>
 * t2c_tree.c <br/>
-![](https://i.imgur.com/sXeLeX4.png) <br/>
+![](https://i.imgur.com/sXeLeX4.png) <br/> <br/>
 這部分就參照著 t_parse.y 打好的規則與老師上面打好的範例，就能完成。不過有個地方比較特別 <br/>
 ![](https://i.imgur.com/loKP0ew.png) <br/>
-這裡是 C 語言 printf 的部分，當初只有打%s 字串的部分，然後發現 printf 也有其他資料型態的資料要印出，所以就令一個 test 變數，透過 if else 去判斷要到哪個 case 去輸出 <br/>
+這裡是 C 語言 printf 的部分，當初只有打%s 字串的部分，然後發現 printf 也有其他資料型態的資料要印出，所以就令一個 test 變數，透過 if else 去判斷要到哪個 case 去輸出 <br/> <br/>
 
 ## The program listing
 * t_parse.y
