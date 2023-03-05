@@ -18,8 +18,8 @@ Augment your T parser with semantic actions for constructing parse trees, write 
 ![](https://i.imgur.com/mBqfCsf.png) <br/>
 　　比較有問題的是在 pexpr 這裡，那時找不太到 exp_id 要去指定到哪個 case，找了一段時間試了好幾遍才 debug 完，這部分細心就好，debug 沒用很久就完成了 <br/> <br/>
 * t2c_tree.c <br/>
-![](https://i.imgur.com/sXeLeX4.png) <br/> <br/>
-這部分就參照著 t_parse.y 打好的規則與老師上面打好的範例，就能完成。不過有個地方比較特別 <br/>
+![](https://i.imgur.com/sXeLeX4.png) <br/> 
+這部分就參照著 t_parse.y 打好的規則與老師上面打好的範例，就能完成。不過有個地方比較特別 <br/> <br/>
 ![](https://i.imgur.com/loKP0ew.png) <br/>
 這裡是 C 語言 printf 的部分，當初只有打%s 字串的部分，然後發現 printf 也有其他資料型態的資料要印出，所以就令一個 test 變數，透過 if else 去判斷要到哪個 case 去輸出 <br/> <br/>
 
